@@ -30,7 +30,11 @@ namespace ConsoleApp2.Attributes
     {
     }
 
-    public class TestAttributeWithConstraint<T> : Attribute where T : IEnumerable
+    public class TestAttributeWithEnumerableConstraint<T> : Attribute where T : IEnumerable
+    {
+    }
+
+    public class TestAttributeWithClassConstraint<T> : Attribute where T : class 
     {
     }
 }

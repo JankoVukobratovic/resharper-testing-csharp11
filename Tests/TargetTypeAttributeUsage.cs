@@ -5,7 +5,7 @@ namespace ConsoleApp2.Tests
     public class TargetTypeAttributeUsageTests
     {
         // Test: Applying TestPropertyAttribute to a property
-        [TestProperty<int>]
+        [TestPropertyAttribute<int>]
         public int PropertyWithTestPropertyAttribute { get; set; }
 
         // Test: Applying TestClassAttribute to a class

@@ -22,20 +22,27 @@ namespace ConsoleApp2.Tests
         public void Foo([TestAttribute<object>] int parameter)
         {
         }
+
+        [Test<Nullable<int>>] public int MyInt;
+
+        [Test<int[]>]
+        public void MyFunction()
+        {
+        }
+
+        [TestAttributeWithClassConstraint<Nullable<int>]
+        public void MyFunction5()
+        {
+        }
     }
 
     //Invalid usages
 
-    // [MyAttribute<>]
-    // class BrokenClass { }
+    [TestAttribute<>]
+    class BrokenClass { }
 
-    [TestAttributeWithConstraint<string>]
+    [TestAttributeWithEnumerableConstraint<int>]
     class ValidClass
-    {
-    }
-
-    //[TestAttributeWithConstraint<int>]
-    class InvalidClass
     {
     }
 }
